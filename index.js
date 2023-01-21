@@ -8,7 +8,7 @@ app.get('/', function(req, res) {
  
 }); 
 app.get('/about', function(req, res) { 
-   res.send("about")
+   res.send("abouts")
 }); 
 app.get('/sitemap', function(req, res) { 
     res.send("sitemap")
