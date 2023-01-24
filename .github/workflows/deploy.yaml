@@ -10,7 +10,7 @@ env:
   ECR_REPOSITORY: deploy-test           # set this to your Amazon ECR repository name
   ECS_SERVICE: MY_ECS_SERVICE                 # set this to your Amazon ECS service name
   ECS_CLUSTER: testCluster                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: sample-fargate-revision1.json # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: ./sample-fargate-revision1.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: fargate-app           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
@@ -21,8 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: 
-          using: 'node16'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@13d241b293754004c80624b5567555c4a39ffbe3
