@@ -4,7 +4,7 @@ const path = require('path');
 const router = express.Router(); 
 // Setup essential routes 
 app.get('/', function(req, res) { 
-    res.send("Welecome 2")
+    res.send("Welecome 3")
  
 }); 
 app.get('/about', function(req, res) { 
